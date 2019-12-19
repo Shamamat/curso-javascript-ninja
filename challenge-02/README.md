@@ -40,8 +40,8 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function fun (n1, n2, n3){
-if(n1.value = true, n2.value = true, n3.value = true){
-res = n1 * n2 * n3 + 2
+if(n1.value === true, n2.value === true, n3.value = true){ // *Correção: O certo deveria ser "if(n1 === undefined || n2 === undefined
+res = n1 * n2 * n3 + 2                                 // *Continuação:  ||n3 === undefined){ return 'tal'(não tal, mas enfim)
 return = `o resultado é ${res}`
 }
 else{
@@ -66,21 +66,21 @@ Crie uma função com as seguintes características:
 2. Se somente um argumento for passado, retorne o valor do argumento.
 3. Se dois argumentos forem passados, retorne a soma dos dois argumentos.
 4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
-5. Se nenhum argumento for passado, retorne o valor booleano `false`.       //<-------------------------\
-6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`. //não entendi a diferença <-/
+5. Se nenhum argumento for passado, retorne o valor booleano `false`.       // *Correção: A diferença entre 
+6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`. //
 */
 function ifs(n1, n2, n3){
-if(n1.value = true, n2.value = false, n3.value = false){
-return `O valor colocado foi ${n1}`
+if(n1.value === true, n2.value === false, n3.value === false){
+ return `O valor colocado foi ${n1}`
 }
-else if(n1.value = true, n2.value = true, n3.value = false){
-return `A soma dos dois números é ${n1 + n2}`
+else if(n1.value === true, n2.value === true, n3.value === false){
+ return `A soma dos dois números é ${n1 + n2}`
 }
-else if(n1.value = true, n2.value = true, n3.value = true){ //agr que lembrei do && mas agr já era :v
-res = n1 + n2 / n3
-return `A soma dos números é ${n1 + n2} e dividindo por ${n3} dá ${res}`
+else if(n1.value === true, n2.value === true, n3.value === true){ //agr que lembrei do && mas agr já era :v
+ res = n1 + n2 / n3
+ return `A soma dos números é ${n1 + n2} e dividindo por ${n3} dá ${res}`
 else if(n1 === undefined && n1 === undefined && n3 === undefined){
-return false //Aqui deu um erro no node e n roda .-.
+ return false //Aqui deu um erro no node e n roda .-.
 }
 return null
 
