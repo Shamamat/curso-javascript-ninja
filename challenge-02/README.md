@@ -66,24 +66,26 @@ Crie uma função com as seguintes características:
 2. Se somente um argumento for passado, retorne o valor do argumento.
 3. Se dois argumentos forem passados, retorne a soma dos dois argumentos.
 4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
-5. Se nenhum argumento for passado, retorne o valor booleano `false`.       // *Correção: A diferença entre 
+5. Se nenhum argumento for passado, retorne o valor booleano `false`.       // 
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`. //
 */
 function ifs(n1, n2, n3){
 if(n1.value === true, n2.value === false, n3.value === false){
  return `O valor colocado foi ${n1}`
 }
-else if(n1.value === true, n2.value === true, n3.value === false){
+else if(n1.value === true, n2.value === true, n3.value === false){ // *Correção: podia ser "n1 !== undefined" (undefined = não definido)
  return `A soma dos dois números é ${n1 + n2}`
 }
 else if(n1.value === true, n2.value === true, n3.value === true){ //agr que lembrei do && mas agr já era :v
- res = n1 + n2 / n3
+ res = (n1 + n2) / n3
  return `A soma dos números é ${n1 + n2} e dividindo por ${n3} dá ${res}`
 else if(n1 === undefined && n1 === undefined && n3 === undefined){
  return false //Aqui deu um erro no node e n roda .-.
 }
-return null
-
+else{
+ return null
+ }
+}
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
 ifs(2) // 'O valor colocado foi 2'
