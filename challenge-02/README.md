@@ -70,15 +70,16 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`. //
 */
 function ifs(n1, n2, n3){
-if(n1.value === true, n2.value === false, n3.value === false){
+if(n1.value === true && n2.value === false && n3.value === false){
  return `O valor colocado foi ${n1}`
 }
-else if(n1.value === true, n2.value === true, n3.value === false){ // *Correção: podia ser "n1 !== undefined" (undefined = não definido)
- return `A soma dos dois números é ${n1 + n2}`
+else if(n1.value === true && n2.value === true && n3.value === false){ 
+ return `A soma dos dois números é ${n1 + n2}`  // *Correção: podia ser "n1 !== undefined" (undefined = não definido)
 }
-else if(n1.value === true, n2.value === true, n3.value === true){ //agr que lembrei do && mas agr já era :v
+else if(n1.value === true && n2.value === true && n3.value === true){ //agr que lembrei do && mas agr já era :v
  res = (n1 + n2) / n3
  return `A soma dos números é ${n1 + n2} e dividindo por ${n3} dá ${res}`
+}
 else if(n1 === undefined && n1 === undefined && n3 === undefined){
  return false //Aqui deu um erro no node e n roda .-.
 }
