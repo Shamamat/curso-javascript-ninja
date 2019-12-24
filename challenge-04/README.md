@@ -47,7 +47,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-var carro = { marca: 'volksvagem', modelo: 2019, placa: 1234, ano: 2019, cor: 'cinza', quantasPortas: 4 , assentos: 5, quantidadePessoas: 0 }
+var carro = { marca: 'volksvagem', modelo: 'pá', placa: 'abc-1234', ano: 2019, cor: 'cinza', quantasPortas: 4 , assentos: 5, quantidadePessoas: 0 }
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -101,9 +101,9 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adicionar = function(quant){
-carro.quantidadePessoas 
-
+carro.adicionarPessoas = function(quant){
+carro.quantidadePessoas < 5 ? `Já temos ${carro.quantidadePessoas} pessoas no carro!` : `O carro já está lotado!
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -113,22 +113,22 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor() //'azul'
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('vermelho') //'vermelho'
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor() // 'vermelho'
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('verde musgo') //'verde musgo'
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor() // 'verde musgo'
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo // 'Esse carro é volksvagem de modelo pá'
 
 // Adicione 2 pessoas no carro.
 ?
