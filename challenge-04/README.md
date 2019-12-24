@@ -101,7 +101,9 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionar = function(quant){
+carro.quantidadePessoas 
+
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
