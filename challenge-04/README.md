@@ -102,17 +102,23 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(quant){
-var res = carro.adicionarPessoas + carro.quantidadePessoas
+var res = quant + carro.quantidadePessoas
+var falta = 5 - quant
 var plural = 's'
 
-
-if(res < 5 && res > 1){
-  return `Já temos ${res} pessoas no carro!`
-}
-else if{ res = 5 
-}
-if(res = 1){
- plural = ''
+if(res >= 5){
+ return `O carro já está lotado! Tem ${res} pessoas no carro`
+ }
+if(res === 1){
+ plural = '' // OBS: Sim, agr esse plural fica levemente inútil, poderia colocar a mensagem do ultimo return mas vou deixar assim
+ }
+else if(res > 1 && res < 5){
+ return `Só cabem mais ${falta} pessoa${plural}!`
+ }
+ else if(res <= -1){
+  return `Coloque um número válido!`
+ }
+ return `Só cabe mais ${res} pessoa${plural} no carro!`
 }
 
 /*
