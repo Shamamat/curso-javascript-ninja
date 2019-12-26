@@ -103,23 +103,27 @@ citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(quant){
 var res = quant + carro.quantidadePessoas
-var falta = 5 - quant
+var falta = 5 - quant //podia ser carro.assentos, mas assim até que n fica tão ruim :v
 var plural = 's'
 
+/* Correção importante: Ele adicionou o valor diretamente na variável 'carro.quantidadePessoas', fazendo ela manter o valor anterior 
+usando carro.quantidadePessoas += quant, ele atribuiu isso dps do "carro lotado" pq aí ele n adicionava um valor que deixaria além de lotado */
+
 if(res >= 5){
- return `O carro já está lotado! Tem ${res} pessoas no carro`
- }
+ return `O carro já está lotado! Tem ${res} pessoas no carro` 
+ } 
 if(res === 1){
  plural = '' // OBS: Sim, agr esse plural fica levemente inútil, poderia colocar a mensagem do ultimo return mas vou deixar assim
- }
+ }           // *Correção: ele colocou um terciário ao invés do meu if inútil: <variavel> === 1 ? 'pessoa' : 'pessoas'
 else if(res > 1 && res < 5){
- return `Só cabem mais ${falta} pessoa${plural}!`
+ return `Só cabem mais ${falta} pessoa${plural}!` 
  }
  else if(res <= -1){
   return `Coloque um número válido!`
  }
  return `Só cabe mais ${res} pessoa${plural} no carro!`
 }
+//OBS: o chato é que no dele ele tinha que toda definir zero então... vou deixar o meu assim, mas acabou meio diferente msm :\
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -147,20 +151,22 @@ carro.obterCor() // 'verde musgo'
 carro.obterMarcaModelo // 'Esse carro é volksvagem de modelo pá'
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionarPessoas(2) // Só cabem mais 3 pessoas!
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoas(4) // Só cabem mais 4 pessoas! (aqui já deveria ficar cheio, mas o exercicio dele ele até adiciona 8, confuzasso)
 
 // Faça o carro encher.
-?
+carro.adicionarPessoas(5) // O carro já está lotado! Tem 5 pessoas no carro 
 
 // Tire 4 pessoas do carro.
-?
+/* Pra tirar pessoas é meio complicado, é pegando o numero de pessoas que já tinha com o que ta colocando e fazer uma validação pra totalPessoas >= assentos, pra n aparecer sempre que o carro está lotado por colocar um valor negativo e ele vai pra outro if */
+// "seria" carro.adicionarPessoas(-4) // "Já temos 1 pessoa no carro"(no dele)
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10) // O carro já está lotado! Tem 10 pessoas no carro
 
 // Quantas pessoas temos no carro?
-?
+/* zero, porque ele vai pra zero toda vez que eu coloco um novo valor, mas deveria ter 5 no final já que não tem mais de 5 assentos...
+mas o dele ele só chamou 'carro.quantidadePessoas' e deu 1 */
 ```
