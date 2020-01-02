@@ -79,7 +79,7 @@ function book(nomeLivro){
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book('') //Também podia ser qualquer outra palavra que não seja um dos livros, e ele colocou o console.log
+book('') //Também podia ser qualquer outra palavra que não fosse um dos livros, e ele colocou o console.log
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
@@ -87,19 +87,20 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 /* Essa parte aq n entendi exatamente oq ele fez, eu pensei que poderia ser criar uma variável com essa frase dentro de book
-(que ficaria melhor na minha opinião) mas ele fez:  */
-book()
+(que ficaria melhor na minha opinião) mas ele fez:'O livro Introdução ao HTML5 tem ' + book('Introdução ao HTML5').quantidadePaginas ' */
+book(`O livro O senhor dos anéis tem ${book(livroSenhorAneis).quantidadePaginas} páginas!`)
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+book(`O autor do livro Harry Potter é ${book(livroHarry).autor}`)
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+book(`O livro IT a coisa foi publicado pela ${book(livroIT).editora}`)
+
