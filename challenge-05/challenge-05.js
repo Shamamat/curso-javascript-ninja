@@ -57,7 +57,8 @@ function book(nomeLivro){
   var livroHarry = { quantidadePaginas: 200, autor: 'Philipino', editora: 'Panini' }
   var livroSenhorAneis = { quantidadePaginas: 300, autor: 'Marco Lutariti', editora: 'Hihappy' }
   var livroIT = { quantidadePaginas: 400, autor: 'Coringa', editora: 'Saraiva' }
-  var tudo = `Coloque algum livro dos 3 livros: ${nomesLivros}`
+  var juntar = { livro1, livro2, livro3 }
+  var tudo = `Coloque algum dos 3 livros: ${juntar}`
 /* *Correção importante: Ele passou os nomes dos livros diretamente com o nome e com suas informações, usando por exemplo: 
    'Introdução ao HTML5': { quantidadePaginas: 220, autor: 'John Resig & Bear Bibeault', Editora: 'Novatec' }, (e colocava os outros 2)
     Mas, ele não pode ser usado como variável por ele ser um 'nome' e não uma 'variável'... mas o meu tbm n ta errado, só mais longo */
