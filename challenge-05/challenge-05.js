@@ -73,7 +73,7 @@ function book(nomeLivro){
     return livroIT
      } // *Correção: Na parte de mostrar o livro certo ele só colocou: return !bookName ? allBooks : allbooks[bookName]; :v
   else{
-    return tudo
+    return tudo //ta errado, corrige dps
      }
   }
   
@@ -89,19 +89,19 @@ usando a frase:
 */
 /* Essa parte aq n entendi exatamente oq ele fez, eu pensei que poderia ser criar uma variável com essa frase dentro de book
 (que ficaria melhor na minha opinião) mas ele fez:'O livro Introdução ao HTML5 tem ' + book('Introdução ao HTML5').quantidadePaginas ' */
-book(`O livro O senhor dos anéis tem ${book(livroSenhorAneis).quantidadePaginas} páginas!`)
+book(`O livro O senhor dos anéis tem ${book(livroSenhorAneis).quantidadePaginas} páginas!`) //ta errado, corrige dps
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-book(`O autor do livro Harry Potter é ${book(livroHarry).autor}`)
+book(`O autor do livro Harry Potter é ${book(livroHarry).autor}`) //ta errado, corrige dps
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-book(`O livro IT a coisa foi publicado pela ${book(livroIT).editora}`)
+book(`O livro IT a coisa foi publicado pela ${book(livroIT).editora}`) // ta errado, corrige dps
 
