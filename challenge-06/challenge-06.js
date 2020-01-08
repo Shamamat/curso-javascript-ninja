@@ -41,13 +41,13 @@ function showTeamPosition(posicao){
     nomeTime = teams[1]
   }
   else if(posicao === 3){
-    nomeTime = 'Palmeiras'
+    nomeTime = teams[2]
   }
   else if(posicao === 4){
-    nomeTime = 'Botafogo' 
+    nomeTime = teams[3] 
   }
   else if(posicao === 5){
-    nomeTime = 'Vasco'
+    nomeTime = teams[4]
   }
   if(posicao === '' || posicao > 5 || posicao <= 0 ){
     console.log(`Não temos a informação do time que está nessa posição, coloque um dos top 5`)   
