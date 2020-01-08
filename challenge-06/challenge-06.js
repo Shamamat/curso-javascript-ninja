@@ -34,31 +34,26 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition(posicao){
   var nomeTime = ''
-  if(posicao[0]){
+  if(posicao === 1){
     nomeTime = teams[0]
-    posicao = 1
   }
-  else if(posicao[1]){
+  else if(posicao === 2){
     nomeTime = teams[1]
-    posicao = 2
   }
-  else if(posicao[2]){
+  else if(posicao === 3){
     nomeTime = 'Palmeiras'
-    posicao = 3
   }
-  else if(posicao[3]){
-    nomeTime = 'Botafogo'
-    posicao = 4
+  else if(posicao === 4){
+    nomeTime = 'Botafogo' 
   }
-  else if(posicao[4]){
+  else if(posicao === 5){
     nomeTime = 'Vasco'
-    posicao = 5
   }
-  else if(posicao === '' || posicao > 5 || posicao <= 0 ){
+  if(posicao === '' || posicao > 5 || posicao <= 0 ){
     console.log(`Não temos a informação do time que está nessa posição, coloque um dos top 5`)   
   }
   else{
-  console.log(`O time que está em ${posicao}º lugar é o ${nomeTime}.`)
+    console.log(`O time que está em ${posicao}º lugar é o ${nomeTime}.`)
   } 
 }
 
@@ -66,13 +61,21 @@ function showTeamPosition(posicao){
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+console.log(showTeamPosition(1))
+console.log(showTeamPosition(2))
+console.log(showTeamPosition(3))
+console.log(showTeamPosition(4))
+
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+mais = 20
+  while(mais < 31){
+   console.log(mais)
+   mais++
+   }
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -86,9 +89,39 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+function convertToHex(cor){
+  var hex
+  if(cor === 'vermelho'){
+  hex = '#ff0000'
+  } 
+  else if(cor === 'amarelo'){
+  hex = '#ffff00'
+  }
+  else if(cor === 'verde'){
+  hex = '#00ff00'
+  } 
+  else if(cor === 'azul'){
+  hex = '#0000ff'
+  }
+  else if(cor === 'rosaEmChoque'){
+  hex = '#FF1493'
+  }
+  console.log(`O hexadecimal para a cor ${cor} é ${hex}.`)
+  
+  if(cor !== 'vermelho' || cor !== 'amarelo' || cor !=='verde' || cor !== 'azul' || cor !== 'rosaEmChoque'){
+    console.log(`Não temos o equivalente decimal para ${cor}`)
+  }
+}  
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+console.log(convertToHex('vermelho'))
+console.log(convertToHex('amarelo'))
+console.log(convertToHex('azul'))
+console.log(convertToHex('verde'))
+console.log(convertToHex('rosaEmChoque'))
+console.log(convertToHex('marrom'))
+console.log(convertToHex('esmeralda'))
+console.log(convertToHex('tomate'))
+
