@@ -5,7 +5,7 @@ Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
 var championship = 'Campeonato de São Paulo' // Sei lá se existe
-console.log(championship) // A partir desse ponto é melhor eu já ir usando o console.log ao invés do return
+console.log(championship) // iria usar usar o console.log ao invés do return, mas esquece, console.log da mt erro 
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -50,10 +50,10 @@ function showTeamPosition(posicao){
     nomeTime = teams[4]
   }
   if(posicao === '' || posicao > 5 || posicao <= 0 ){
-    console.log(`Não temos a informação do time que está nessa posição, coloque um dos top 5`)   
+    return(`Não temos a informação do time que está nessa posição, coloque um dos top 5`)   
   }
   else{
-    console.log(`O time que está em ${posicao}º lugar é o ${nomeTime}.`)
+    return(`O time que está em ${posicao}º lugar é o ${nomeTime}.`)
   } 
 }
 
@@ -106,11 +106,11 @@ function convertToHex(cor){
   else if(cor === 'rosaEmChoque'){
   hex = '#FF1493'
   }
-  console.log(`O hexadecimal para a cor ${cor} é ${hex}.`)
   
-  if(cor !== 'vermelho' || cor !== 'amarelo' || cor !=='verde' || cor !== 'azul' || cor !== 'rosaEmChoque'){
-    console.log(`Não temos o equivalente decimal para ${cor}`)
+  else{
+    return(`Não temos o equivalente decimal para ${cor}`)
   }
+  return(`O hexadecimal para a cor ${cor} é ${hex}.`)
 }  
 
 /*
