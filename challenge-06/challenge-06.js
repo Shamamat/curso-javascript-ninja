@@ -32,13 +32,18 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
+// *Correção: ...Ele fez anos luz mais fácil, foi : function showTeamPosition(position){
+// if(position < 1 || position > 5){
+// return 'Não temos a informação do time que estão procurando.' }
+// return 'o time que está em ' + position + 'º lugar é o ' + teams[position - 1]+ '.'
+// OBS: Meu problema é lembrar desse: teams[position - 1], pq ele reduz em -1 o valor que vai pegar do array teams, pq começa do zero
 function showTeamPosition(posicao){
   var nomeTime = ''
   if(posicao === 1){
-    nomeTime = teams[0]
+    nomeTime = teams[0] 
   }
   else if(posicao === 2){
-    nomeTime = teams[1]
+    nomeTime = teams[1] // Quando vi que tava fazendo ficar mais longo do que devia deixei assim pq já tinha feito msm...
   }
   else if(posicao === 3){
     nomeTime = teams[2]
@@ -72,9 +77,8 @@ Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 mais = 20
-  while(mais < 31){
-   console.log(mais)
-   mais++
+  while(mais < 31){ //Dava pra ser <= 30 ... pensei que ele já parava no < mas ok
+   console.log(mais++) 
    }
 
 /*
@@ -89,9 +93,16 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
+// Correção: Eu até tinha visto a estrutura switch mas n tinha ideia de como colocar, então ele fez mais ou menos: 
+// OBS: não sabia que podia colocar palavras no case, muito menos colocar um switch que... n entendi exatamente pq precisa repetir algo
+// switch (color){
+// case 'white': 
+// hexa = '#FFFFFF'
+// break;
+// E se não fosse uma das cores tinha um default lá em baixo e um return no final se desse certo... ainda fica meio grande então td bem
 function convertToHex(cor){
   var hex
-  if(cor === 'vermelho'){
+  if(cor === 'vermelho'){ 
   hex = '#ff0000'
   } 
   else if(cor === 'amarelo'){
@@ -106,7 +117,6 @@ function convertToHex(cor){
   else if(cor === 'rosaEmChoque'){
   hex = '#FF1493'
   }
-  
   else{
     return(`Não temos o equivalente decimal para ${cor}`)
   }
