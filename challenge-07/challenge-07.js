@@ -9,6 +9,7 @@ A função deverá retornar o array atualizado.
 */
 function addItem(item){
 arr.push(item)
+return arr
 }
 
 /*
@@ -22,19 +23,19 @@ Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log(`O segundo elemento do segundo array é ${arr[7][1]}`)
+console.log(`O segundo elemento do segundo array é ${arr[7][1]}`) // OBS: estava usando o exercício de explicação como arr então deixei
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
 "O primeiro array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log(`O primeiro array tem ${arr[7][0].length} itens.`)
+console.log(`O primeiro array tem ${arr.length} itens.`) // OBS: Tinha colocado [7][0] pq achei que era do array criado dentro do array 
 
 /*
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
 "O segundo array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log(`O segundo array tem ${arr[7][1].length} itens.`)
+console.log(`O segundo array tem ${arr[7].length} itens.`) // OBS: Aqui tinha colocado [7][1]
 
 /*
 Utilizando a estrutura de repetição `while`, mostre no console todos os números
