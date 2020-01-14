@@ -43,7 +43,7 @@ pares entre 10 e 20, inclusive esses 2.
 */
 var par = 10
 
-while(par <= 20){ // OBS: Não entendi essa parte por ser < se a variável par já é menor que 20...
+while(par <= 20){ 
   par % 2 === 0 ? console.log(`Números pares entre 10 e 20: ${par}`) : ''
   par++
 }
