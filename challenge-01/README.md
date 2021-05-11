@@ -2,7 +2,8 @@
 
 ```js
 //INFORMAÇÃO IMPORTANTE: Estou retornando aqui para ver meu eu do passado e rever javascript do zero, me lembro que antes eu usava os parênteses igual hoje pra marcar umas 
-anotações importantes mas vou refazer uma boa parte deles apagando msm e colocar com oq aprendi atualmente msm, see ya!
+//anotações importantes mas vou refazer uma boa parte deles apagando msm e colocar com oq aprendi atualmente msm, see ya!
+
 // Declarar uma variável chamada `myvar`, sem valor. (*OBS: tem que colocar ";" no final, mas no node n tem problema)
 var myvar 
 
