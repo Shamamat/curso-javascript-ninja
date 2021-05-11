@@ -1,9 +1,10 @@
 # Desafio Semana #1
 
 ```js
-// Declarar uma variável chamada `myvar`, sem valor.
+Informação importante: Estou retornando aqui para ver meu eu do passado e rever javascript do zero, me lembro que antes eu usava os parênteses igual hoje pra marcar umas 
+anotações importantes mas vou refazer uma boa parte deles apagando msm e colocar com oq aprendi atualmente msm, see ya!
+// Declarar uma variável chamada `myvar`, sem valor. (*OBS: tem que colocar ";" no final, mas no node n tem problema)
 var myvar 
-// OLÁ! vim aqui só pra fazer um teste
 
 // Após declarada, atribua o valor 10 à variável `myvar`.
 myvar = 10 
@@ -41,11 +42,14 @@ n1 = 2
 n2 = 4
 res = n1/n2
 res
+(*Caramba eu do passado, vc fez mt errado kkkk, nem function usei aq, nossa, mas eu fiz:
+function divisao(a, b){
+return a / b } )
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 var n1, n2, res
 n1 = 10
 n2 = 2
-res = n1/n2
+res = n1/n2 (*De novo errado, era só usar divisao(10,2)
 res
 ```
