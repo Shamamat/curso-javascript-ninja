@@ -43,14 +43,14 @@ n1 = 2
 n2 = 4
 res = n1/n2
 res
-(*Caramba eu do passado, vc fez mt errado kkkk, nem function usei aq, nossa, mas eu fiz:
+/*(*Caramba eu do passado, vc fez mt errado kkkk, nem function usei aq, nossa, mas eu fiz:
 function divisao(a, b){
-return a / b } )
+return a / b } )*/
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 var n1, n2, res
 n1 = 10
 n2 = 2
-res = n1/n2 (*De novo errado, era só usar divisao(10,2)
+res = n1/n2 /*(*De novo errado, era só usar divisao(10,2)*/
 res
 ```
