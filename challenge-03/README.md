@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-var pes
+var pes = {} //Só errou isso aqui eu do passado (já corrigi) parabéns! :3
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -171,10 +171,10 @@ var met = 's'
 if(pessoa.sexo === 'Feminino'){
 sex = 'a'
 }
-if(pessoa.idade <= 1){
+if(pessoa.idade === 1){
 id = ''
 }
-if(pessoa.CaminhouQuantosMetros <= 1){
+if(pessoa.CaminhouQuantosMetros === 1){ //Aqui tinha coloca <= 1 mas n tem necessidade, sempre é 1, e se for sla, -210 seria com "s" mesmo
 met = ''
 }
 
