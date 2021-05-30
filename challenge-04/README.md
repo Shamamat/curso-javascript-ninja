@@ -8,7 +8,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(tru) {
-return tru ? true : false
+return tru ? true : false // O eu do passado fez a msm coisa, mas o professor só colocou "return !!tru" (ex), então o dele era mais prático
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -47,7 +47,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-var carro = { marca: 'volksvagem', modelo: 'pá', placa: 'abc-1234', ano: 2019, cor: 'cinza', quantasPortas: 4 , assentos: 5, quantidadePessoas: 0 }
+var carro = { marca: 'Ferrari', modelo: 'esportivo', placa: '2G4G420', ano: 2020, cor: 'verde', quantasPortas: 4, assentos: 5, quantidadePessoas: 0 };
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -83,7 +83,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-carro.obterMarcaModelo = `Esse carro é ${carro.marca} de modelo ${carro.modelo}`
+carro.obterMarcaModelo = `Esse carro é ${carro.marca} de modelo ${carro.modelo}` //Aqui era pra pegar a "função" como diz no exercício, mas assim tbm ta "certo"
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -101,30 +101,20 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adicionarPessoas = function(quant){
-var res = quant + carro.quantidadePessoas
-var falta = 5 - quant //podia ser carro.assentos, mas assim até que n fica tão ruim :v
-var plural = 's'
-
-/* Correção importante: Ele adicionou o valor diretamente na variável 'carro.quantidadePessoas', fazendo ela manter o valor anterior 
-usando carro.quantidadePessoas += quant, ele atribuiu isso dps do "carro lotado" pq aí ele n adicionava um valor que deixaria além de lotado */
-
-if(res >= 5){
- return `O carro já está lotado! Tem ${res} pessoas no carro` 
- } 
-if(res === 1){
- plural = '' // OBS: Sim, agr esse plural fica levemente inútil, poderia colocar a mensagem do ultimo return mas vou deixar assim
- }           // *Correção: ele colocou um terciário ao invés do meu if inútil: <variavel> === 1 ? 'pessoa' : 'pessoas'
-else if(res > 1 && res < 5){
- return `Só cabem mais ${falta} pessoa${plural}!` 
- }
- else if(res <= -1){
-  return `Coloque um número válido!`
- }
- return `Só cabe mais ${res} pessoa${plural} no carro!`
+carro.adicionarPessoas = function(np){
+ var totalPessoas = carro.quantidadePessoas + np; 
+ if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) { 
+ return `O carro já está lotado!`;
 }
-//OBS: o chato é que no dele ele tinha que toda definir zero então... vou deixar o meu assim, mas acabou meio diferente msm :\
+ if(carro.quantidadePessoas > carro.assentos){
+ var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+ var sing = carro.quantasPessoasCabem === 1 ? '' : 's'
+ return `Só cabe${sing} mais ${carro.quantidadePessoas} pessoa${sing}!`
+}
+ carro.quantidadePessoas += np;
+ return `Já temos ${carro.quantidadePessoas} pessoas no carro!`;
 
+//OBS: Fiz a correção, apaguei oq tinha feito pq eu n entendi então... é isso
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
@@ -148,25 +138,24 @@ carro.mudarCor('verde musgo') //'verde musgo'
 carro.obterCor() // 'verde musgo'
 
 // Qual a marca e modelo do carro?
-carro.obterMarcaModelo // 'Esse carro é volksvagem de modelo pá'
+carro.obterMarcaModelo // 'Esse carro é um Ferrari esportivo'
 
 // Adicione 2 pessoas no carro.
-carro.adicionarPessoas(2) // Só cabem mais 3 pessoas!
+carro.adicionarPessoas(2) // 'Já temos 2 pessoas no carro!'
 
 // Adicione mais 4 pessoas no carro.
-carro.adicionarPessoas(4) // Só cabem mais 4 pessoas! (aqui já deveria ficar cheio, mas o exercicio dele ele até adiciona 8, confuzasso)
+carro.adicionarPessoas(4) // 'Só cabem mais 3 pessoas no carro!'
 
 // Faça o carro encher.
-carro.adicionarPessoas(5) // O carro já está lotado! Tem 5 pessoas no carro 
+carro.adicionarPessoas(3) // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-/* Pra tirar pessoas é meio complicado, é pegando o numero de pessoas que já tinha com o que ta colocando e fazer uma validação pra totalPessoas >= assentos, pra n aparecer sempre que o carro está lotado por colocar um valor negativo e ele vai pra outro if */
-// "seria" carro.adicionarPessoas(-4) // "Já temos 1 pessoa no carro"(no dele)
+
+carro.adicionarPessoas(-4) // "Já temos 1 pessoas no carro" //poderia ter feito a validadação facinho, era só eu ter usado o ${sing} mas... é isso aí
 
 // Adicione 10 pessoas no carro.
-carro.adicionarPessoas(10) // O carro já está lotado! Tem 10 pessoas no carro
+carro.adicionarPessoas(10) // 'Só cabem mais 4 pessoas no carro!'
 
 // Quantas pessoas temos no carro?
-/* zero, porque ele vai pra zero toda vez que eu coloco um novo valor, mas deveria ter 5 no final já que não tem mais de 5 assentos...
-mas o dele ele só chamou 'carro.quantidadePessoas' e deu 1 */
+carro.quantidadePessoas() // 1
 ```
