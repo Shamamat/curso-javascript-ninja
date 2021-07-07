@@ -7,14 +7,12 @@ var qualquer = [5, 'Matheuszinho Gameplays', true, undefined, 19 ]
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-function retornar(){
-  return qualquer
-}
+function retornar(){ return qualquer }
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-qualquer[1] // OBS: Ele colocou como console.log por agora ser no js/node, mas vou mudar tbm quando chegar html
+qualquer[1] // OBS: Ele colocou como "console.log" por estar fazendo isso pelo git, aí ele aparece a resposta pelo terminal (add ., status, commits, etc.)
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -22,8 +20,7 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-function param(arr, index){
-  return arr[index] // * Correção/Obs: Essa parte eu só copiei pq realmente n tinha entendido exatamente, mas é até que simples
+function arrNum(arr, num){ return arr[num] };
 }
 
 /*
@@ -35,8 +32,11 @@ var qualquer2 = [5, 'Matheuszinho Gameplays', true, undefined, null ]
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-qualquer2[4] // Repetindo, podia ser console.log igual o professor fez: console.log( myFunction2( myArray2, 0) );
-             // OBS: ele colocou todos os valores um por um por mais que esteja "último" na pergunta 
+qualquer2[0] // Repetindo, podia ser console.log igual o professor fez: console.log( myFunction2( myArray2, 0) ); e tbm com o 1,2,3 e 4
+qualquer2[1]
+qualquer2[2]
+qualquer2[3]
+qualquer2[4]
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -53,56 +53,39 @@ propriedades:
 os livros.
 */
 function book(nomeLivro){
-  var nomesLivros = { livro1: 'Harry Potter', livro2: 'O senhor dos anéis', livro3: 'IT a coisa' }
-  var livroHarry = { quantidadePaginas: 200, autor: 'Philipino', editora: 'Panini' }
-  var livroSenhorAneis = { quantidadePaginas: 300, autor: 'Marco Lutariti', editora: 'Hihappy' }
-  var livroIT = { quantidadePaginas: 400, autor: 'Coringa', editora: 'Saraiva' }
-  var juntar = { livro1, livro2, livro3 }
-  var tudo = `Coloque algum dos 3 livros: ${juntar}`
-/* *Correção importante: Ele passou os nomes dos livros diretamente com o nome e com suas informações, usando por exemplo: 
-   'Introdução ao HTML5': { quantidadePaginas: 220, autor: 'John Resig & Bear Bibeault', Editora: 'Novatec' }, (e colocava os outros 2)
-    Mas, ele não pode ser usado como variável por ele ser um 'nome' e não uma 'variável'... mas o meu tbm n ta errado, só mais longo */
-  
-  if(nomeLivro === nomesLivros.livro1){
-    return livroHarry
-     }
-  else if(nomeLivro === nomesLivros.livro2){
-     return livroSenhorAneis
-     }
-  else if(nomeLivro === nomesLivros.livro3){ 
-    return livroIT
-     } // *Correção: Na parte de mostrar o livro certo ele só colocou: return !bookName ? allBooks : allbooks[bookName]; :v
-  else{
-    return tudo //ta errado, corrige dps
-     }
+  var todosLivros = {
+    'Harry Potter': { quantidadePaginas: 200, autor: 'Philipino', editora: 'Panini' }, // OBS: Aqui o nome do objeto é 'Harry Potter' e
+    'O senhor dos anéis': { quantidadePaginas: 300, autor: 'Marco Lutariti', editora: 'Hihappy'  }, // ele pode ser colocado assim separado pra ser chamado de
+    'IT a coisa': { quantidadePaginas: 400, autor: 'Coringa', editora: 'Saraiva' } // uma forma mais fácil, se não se chamaria HarryPotter mas ngm digita assim
   }
+  return !nomeLivro ? todosLivros : todosLivros [nomeLivro]; // Aqui mostra todos os livros OU mostra o livro passado por parâmetro
   
+  // OBS: Apaguei oq tinha feito pra colocar a correção msm, oq tinha feito tava bem diferente, só os nomes que mudei... e dnv n consegui fazer pq não consegui direito .-.
+  // OBS2: Aqui o objeto ficou dentro um objeto, onde todosLivros tem harry potter e outros que dentro tem suas propriedades. Só não esquece da vírgula, já que é um objeto/prop
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book('') //Também podia ser qualquer outra palavra que não fosse um dos livros, e ele colocou o console.log
+book('') //Também podia ser qualquer outra palavra que não fosse um dos livros, e ele colocou dentro do console.log
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-/* Essa parte aq n entendi exatamente oq ele fez, eu pensei que poderia ser criar uma variável com essa frase dentro de book
-(que ficaria melhor na minha opinião) mas ele fez:'O livro ${bookName} tem ' + book('bookName').quantidadePaginas ' */
-var nome = 'livroSenhorAneis'
-book(`O livro ${nome} tem ${book(nome).quantidadePaginas} páginas!`) //ta errado, corrige dps
-
+var nomeLivro = 'Harry Potter';  // Só pra ser mais fácil de usar nos de baixo (Se mudar ESSE valor muda o resultado das de baixo tbm, aí sabe o valor dos 3 de uma vez)
+`O livro ${nomeLivro} tem ${book(nomeLivro).quantidadePaginas} páginas!` // OBS: Também fiquei surpreso de funcionar assim kk, peguei da correção já que ele n explico isso,
+                                                                         // e dnv, ele usou o "console.log" nos outros exercícios tbm (de baixo)
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-book(`O autor do livro ${nome} é ${book(nome).autor}`) //ta errado, corrige dps
+`O autor do livro ${nomeLivro} é ${book(nomeLivro).autor}` // Pra fixar: Aqui não tem o var porque eu fiz todos seguirem o "nomeLivro" do exercício de cima
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-book(`O livro ${nome} foi publicado pela ${book(nome).editora}`) // ta errado, corrige dps
+`O livro ${nomeLivro} foi publicado pela ${book('nomeLivro').editora}`
 
